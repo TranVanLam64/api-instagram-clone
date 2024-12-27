@@ -1,11 +1,12 @@
-import { User } from "../models"
+import { User } from "../models/index.js"
 
 const getAllUsers = async () => {
     return await User.find()
 }
 
 const getUser = async (id) => {
-    return await User.findById(id)
+    const user = await User.findById(id);
+    return user || null;
 }
 
 const createUser = async (userData) => {
@@ -21,7 +22,7 @@ const deleteUser = async (id) => {
     return await User.findByIdAndDelete(id)
 }
 
-export {
+export default {
     getAllUsers,
     getUser,
     createUser,

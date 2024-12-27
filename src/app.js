@@ -1,13 +1,17 @@
 import express from "express"
-import { userRouter } from "./routes";
+import router from "./routes/routes.js";
+import Database from './Database.js';
 const app = express();
+
+// Connect Database
+new Database()
 
 // Middleware
 app.use(express.json())
 
 
 // Routes
-app.use("/api/v1/user", userRouter)
+app.use("/api/v1", router)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {

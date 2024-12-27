@@ -1,5 +1,9 @@
-import userService from "./userService"
+import { default as userService } from "./userService.js"
+import { default as postService } from "./postService.js"
+import { default as commentService } from "./commentService.js"
 
 export {
-    userService
+    userService,
+    postService,
+    commentService
 }

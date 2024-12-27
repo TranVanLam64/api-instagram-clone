@@ -1,4 +1,4 @@
-import { userService } from "../services";
+import { userService } from "../services/index.js";
 
 const getAllUsers = async (req, res) => {
     try {
@@ -45,7 +45,7 @@ const deleteUser = async (req, res) => {
     }
 };
 
-export {
+export default {
     getAllUsers,
     getUser,
     createUser,
